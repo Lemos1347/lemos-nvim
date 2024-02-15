@@ -304,6 +304,17 @@ local default_plugins = {
       { "<leader>sm", "<cmd>MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
     },
   },
+  {
+    "okuuva/auto-save.nvim",
+    cmd = "ASToggle",
+    event = { "BufLeave" },
+    opts = {
+      trigger_events = {
+        immediate_save = { "BufLeave" },
+        defer_save = { nil },
+      },
+    },
+  },
 }
 
 local config = require("core.utils").load_config()
