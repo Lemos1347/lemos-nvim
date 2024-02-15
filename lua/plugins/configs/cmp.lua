@@ -1,4 +1,4 @@
-local cmp = require "cmp"
+local cmp = require("cmp")
 
 dofile(vim.g.base46_cache .. "cmp")
 
@@ -15,7 +15,7 @@ local formatting_style = {
   fields = field_arrangement[cmp_style] or { "abbr", "kind", "menu" },
 
   format = function(_, item)
-    local icons = require "nvchad.icons.lspkind"
+    local icons = require("nvchad.icons.lspkind")
     local icon = (cmp_ui.icons and icons[item.kind]) or ""
 
     if cmp_style == "atom" or cmp_style == "atom_colored" then
@@ -56,7 +56,7 @@ local options = {
       scrollbar = false,
     },
     documentation = {
-      border = border "CmpDocBorder",
+      border = border("CmpDocBorder"),
       winhighlight = "Normal:CmpDoc",
     },
   },
@@ -75,10 +75,10 @@ local options = {
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
-    ["<CR>"] = cmp.mapping.confirm {
+    ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
-    },
+    }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -114,7 +114,7 @@ local options = {
 }
 
 if cmp_style ~= "atom" and cmp_style ~= "atom_colored" then
-  options.window.completion.border = border "CmpBorder"
+  options.window.completion.border = border("CmpBorder")
 end
 
 return options
