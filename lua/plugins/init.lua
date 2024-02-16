@@ -315,6 +315,14 @@ local default_plugins = {
       },
     },
   },
+  {
+
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end,
+  },
 }
 
 local config = require("core.utils").load_config()

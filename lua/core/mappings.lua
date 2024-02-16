@@ -24,7 +24,7 @@ M.general = {
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
     -- save
-    ["<C-S>"] = { "<cmd> w <CR>", "Save file" },
+    ["<C-S>"] = { "<cmd> :w <CR>", "Save file" },
 
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
@@ -551,6 +551,19 @@ M.harpoon = {
       end,
       "Go to file 4",
     },
+  },
+}
+
+--just for cheatsheet
+M.surround = {
+  plugin = true,
+  n = {
+    ["ysiw + <what_surround_with>"] = { "", "Surround word" },
+    ["cs + <from> + <to>"] = { "", "Change surrounded" },
+    ["ds + <from>"] = { "", "Deleted surrounded" },
+  },
+  v = {
+    ["S"] = { "", "Surround selected" },
   },
 }
 
