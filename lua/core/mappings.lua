@@ -249,6 +249,10 @@ M.lspconfig = {
       end,
       "List workspace folders",
     },
+    ["<leader>lsrs"] = {
+      ":LspRestart<CR>",
+      "Restart lsp",
+    },
   },
 
   v = {
