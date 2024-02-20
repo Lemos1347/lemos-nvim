@@ -60,6 +60,8 @@ M.general = {
     ["<leader>sx"] = { "<cmd>close<CR>", "Close current split" }, -- close current split window
 
     ["<leader>qq"] = { ":q<CR>", "Exit current window" },
+    ["d"] = { '"_d', "Delete without copyng" },
+    ["J"] = { "mzJ`z", "Append above line to current and maintaing cursor where it is" },
   },
 
   t = {
@@ -71,6 +73,9 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
     [">"] = { ">gv", "Indent line" },
+    ["J"] = { ":m '>+1<CR>gv=gv", "Move selected text up" },
+    ["K"] = { ":m '<-2<CR>gv=gv", "Move selected text down" },
+    ["d"] = { '"_d', "Delete without copyng" },
   },
 
   x = {
@@ -78,7 +83,8 @@ M.general = {
     ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } },
+    --[[ ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } }, ]]
+    ["<leader>p"] = { '"_dp', "Replace without copying" },
   },
 }
 
@@ -270,10 +276,10 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["<leader>ee"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
     -- focus
-    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+    ["<leader>fe"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 }
 
