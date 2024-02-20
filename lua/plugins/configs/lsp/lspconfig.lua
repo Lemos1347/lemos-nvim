@@ -259,4 +259,16 @@ lspconfig.clangd.setup({
   on_attach = M.on_attach,
 })
 
+--configure for docker-compose e Dockerfile
+lspconfig.docker_compose_language_service.setup({
+  capabilities = M.capabilities,
+  on_attach = M.on_attach,
+  filetypes = { "yaml, yml" },
+})
+lspconfig.dockerls.setup({
+  capabilities = M.capabilities,
+  on_attach = M.on_attach,
+  filetypes = { "Dockerfile, dockerfile" },
+})
+
 return M
