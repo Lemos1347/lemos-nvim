@@ -72,9 +72,13 @@ local default_plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
-    tag = "v0.9.2",
+    lazy = false,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      "windwp/nvim-ts-autotag",
+    },
     opts = function()
       return require("plugins.configs.treesitter")
     end,
