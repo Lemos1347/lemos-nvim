@@ -1,10 +1,10 @@
-local conform = require "conform"
+local conform = require("conform")
 
-local utils = require "core.utils"
+local utils = require("core.utils")
 
-utils.load_mappings "formatting"
+utils.load_mappings("formatting")
 
-conform.setup {
+conform.setup({
   formatters_by_ft = {
     javascript = { "prettier" },
     typescript = { "prettier" },
@@ -24,10 +24,11 @@ conform.setup {
     cmake = { "cmakelang" },
     c = { "clang-format" },
     cpp = { "clang-format" },
+    -- sql = { "sql-formatter" },
   },
   format_on_save = {
     lsp_fallback = true,
     async = false,
     timeout_ms = 1000,
   },
-}
+})

@@ -24,7 +24,9 @@ M.general = {
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
     -- save
-    ["<C-S>"] = { "<cmd> :w <CR>", "Save file" },
+    ["<leader>s"] = { ":w<CR>", "Save file" },
+    ["<leader>w"] = { ":bp|bd#<CR>", "Close current buffer" },
+    ["<leader>W"] = { ":%bd|e#<CR>", "Close all buffers except the one you are" },
 
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
@@ -61,6 +63,7 @@ M.general = {
 
     ["<leader>qq"] = { ":q<CR>", "Exit current window" },
     ["d"] = { '"_d', "Delete without copyng" },
+    ["c"] = { '"_c', "Delete and insert mode without copyng" },
     ["J"] = { "mzJ`z", "Append above line to current and maintaing cursor where it is" },
   },
 
@@ -76,6 +79,7 @@ M.general = {
     ["J"] = { ":m '>+1<CR>gv=gv", "Move selected text up" },
     ["K"] = { ":m '<-2<CR>gv=gv", "Move selected text down" },
     ["d"] = { '"_d', "Delete without copyng" },
+    ["c"] = { '"_c', "Delete and insert mode without copyng" },
   },
 
   x = {
@@ -84,7 +88,7 @@ M.general = {
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
     --[[ ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } }, ]]
-    ["<leader>p"] = { '"_dp', "Replace without copying" },
+    ["p"] = { '"_dp', "Replace without copying" },
   },
 }
 
@@ -280,6 +284,10 @@ M.nvimtree = {
 
     -- focus
     ["<leader>fe"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+
+    ["<leader>er"] = { "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer" },
+
+    ["<leader>ec"] = { "<cmd>NvimTreeCollapse<CR>", "Collapse file explorer" },
   },
 }
 

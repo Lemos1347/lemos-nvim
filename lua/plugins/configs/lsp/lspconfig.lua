@@ -271,4 +271,10 @@ lspconfig.dockerls.setup({
   filetypes = { "Dockerfile, dockerfile" },
 })
 
+--configure for sql files
+lspconfig.sqls.setup({
+  capabilities = M.capabilities,
+  on_attach = M.on_attach,
+})
+
 return M
