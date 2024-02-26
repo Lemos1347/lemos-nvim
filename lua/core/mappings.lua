@@ -63,7 +63,7 @@ M.general = {
     ["<leader>se"] = { "<C-w>=", "Make splits equal size" }, -- make split windows equal width & height
     ["<leader>sx"] = { "<cmd>close<CR>", "Close current split" }, -- close current split window
 
-    ["<leader>qq"] = { ":q<CR>", "Exit current window" },
+    ["<leader>q"] = { ":q<CR>", "Exit current window" },
     ["d"] = { '"_d', "Delete without copyng" },
     ["c"] = { '"_c', "Delete and insert mode without copyng" },
     ["J"] = { "mzJ`z", "Append above line to current and maintaing cursor where it is" },
@@ -234,7 +234,7 @@ M.lspconfig = {
       "Goto next",
     },
 
-    ["<leader>q"] = {
+    ["<leader>d"] = {
       function()
         vim.diagnostic.setloclist()
       end,
@@ -524,7 +524,7 @@ M.formatting = {
 M.undotree = {
   plugin = true,
   n = {
-    ["<leader>z"] = { "<cmd>:UndotreeToggle<CR>", "Toggle undotree vision" },
+    ["<leader>z"] = { "<cmd>:UndotreeToggle|:UndotreeFocus<CR>", "Toggle undotree vision" },
   },
 }
 
