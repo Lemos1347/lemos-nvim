@@ -320,11 +320,24 @@ local default_plugins = {
     },
   },
   {
-
     "kylechui/nvim-surround",
     event = "VeryLazy",
     config = function()
       require("nvim-surround").setup({})
+    end,
+  },
+  {
+    "romgrk/barbar.nvim",
+    dependencies = {
+      "lewis6991/gitsigns.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    lazy = false,
+    config = function()
+      require("plugins.configs.barbar")
     end,
   },
 }

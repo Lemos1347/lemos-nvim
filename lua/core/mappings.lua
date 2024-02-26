@@ -47,6 +47,8 @@ M.general = {
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
+    ["<Tab>"] = { ":bnext<CR>", "Switch to next buffer." },
+    ["<S-Tab>"] = { ":bprev<CR>", "Switch to previuous buffer" },
 
     ["<leader>fm"] = {
       function()
@@ -88,7 +90,7 @@ M.general = {
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
     --[[ ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } }, ]]
-    ["p"] = { '"_dp', "Replace without copying" },
+    ["p"] = { '"_dP', "Replace without copying" },
   },
 }
 
