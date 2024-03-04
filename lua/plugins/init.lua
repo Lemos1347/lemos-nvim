@@ -88,6 +88,13 @@ local default_plugins = {
     end,
   },
 
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    config = function()
+      require("plugins.configs.treesitter-textobjects")
+    end,
+  },
+
   -- git stuff
   {
     "lewis6991/gitsigns.nvim",
