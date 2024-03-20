@@ -26,6 +26,6 @@ vim.o.wrap = true
 vim.o.linebreak = true
 
 -- Definir um limite de largura de texto global para quebra de linha
-vim.o.textwidth = 60
+vim.o.textwidth = 120
 
 require("plugins")
