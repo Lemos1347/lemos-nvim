@@ -2,6 +2,7 @@ local options = {
   ensure_installed = {
     "lua-language-server",
     "prettier", -- prettier formatter
+    "prettierd",
     "stylua", -- lua formatter
     "isort", -- python formatter
     "black", -- python formatter
