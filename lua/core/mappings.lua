@@ -24,9 +24,9 @@ M.general = {
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
     -- save
-    ["<leader>s"] = { ":w<CR>", "Save file" },
-    ["<leader>w"] = { ":bp|bd#<CR>", "Close current buffer" },
-    ["<leader>W"] = { ":%bd|e#<CR>", "Close all buffers except the one you are" },
+    ["<leader>s"] = { ":w<CR>", "Save file", opts = { silent = true } },
+    -- ["<leader>w"] = { ":bp|bd#<CR>", "Close current buffer" },
+    -- ["<leader>W"] = { ":%bd|e#<CR>", "Close all buffers except the one you are" },
 
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
@@ -584,6 +584,56 @@ M.surround = {
   },
   v = {
     ["S"] = { "", "Surround selected" },
+  },
+}
+
+M.barbar = {
+  plugin = true,
+  n = {
+    ["<A-,>"] = { "<Cmd>BufferPrevious<CR>", "Move to previous", opts = { silent = true } },
+    ["<A-.>"] = { "<Cmd>BufferNext<CR>", "Move to next", opts = { silent = true } },
+
+    ["<A-<>"] = { "<Cmd>BufferMovePrevious<CR>", "Re-order to previous", opts = { silent = true } },
+    ["<A->>"] = { "<Cmd>BufferMoveNext<CR>", "Re-order to next", opts = { silent = true } },
+
+    ["<A-1>"] = { "<Cmd>BufferGoto 1<CR>", "Go to buffer 1", opts = { silent = true } },
+    ["<A-2>"] = { "<Cmd>BufferGoto 2<CR>", "Go to buffer 2", opts = { silent = true } },
+    ["<A-3>"] = { "<Cmd>BufferGoto 3<CR>", "Go to buffer 3", opts = { silent = true } },
+    ["<A-4>"] = { "<Cmd>BufferGoto 4<CR>", "Go to buffer 4", opts = { silent = true } },
+    ["<A-5>"] = { "<Cmd>BufferGoto 5<CR>", "Go to buffer 5", opts = { silent = true } },
+    ["<A-6>"] = { "<Cmd>BufferGoto 6<CR>", "Go to buffer 6", opts = { silent = true } },
+    ["<A-7>"] = { "<Cmd>BufferGoto 7<CR>", "Go to buffer 7", opts = { silent = true } },
+    ["<A-8>"] = { "<Cmd>BufferGoto 8<CR>", "Go to buffer 8", opts = { silent = true } },
+    ["<A-9>"] = { "<Cmd>BufferGoto 9<CR>", "Go to buffer 9", opts = { silent = true } },
+    ["<A-0>"] = { " <Cmd>BufferLast<CR>", "Go to last buffer", opts = { silent = true } },
+
+    ["<A-p>"] = { "<Cmd>BufferPin<CR> ", "Pin/unpin buffer", opts = { silent = true } },
+
+    ["<A-w>"] = { "<Cmd>BufferClose<CR>", "Close buffer", opts = { silent = true } },
+    ["<A-t>"] = { "<Cmd>BufferRestore<CR>", "Restore buffer", opts = { silent = true } },
+    ["<A-W>"] = {
+      "<Cmd>BufferCloseAllButCurrentOrPinned<CR>",
+      "Close all buffers except the one you are",
+      opts = { silent = true },
+    },
+    ["<A-c->>"] = { "<Cmd>BufferCloseBuffersLeft<CR>", "Close buffers in the left", opts = { silent = true } },
+    ["<A-c-<>"] = { "<Cmd>BufferCloseBuffersRight<CR>", "Close buffers in the right", opts = { silent = true } },
+
+    ["<C-p>"] = { "<Cmd>BufferPick<CR>", "Magic buffer-picking mode", opts = { silent = true } },
+
+    ["<leader>bb"] = {
+      "<Cmd>BufferOrderByBufferNumber<CR>",
+      "Order buffers by buffer number",
+      opts = { silent = true },
+    },
+    ["<leader>bn"] = { "<Cmd>BufferOrderByName<CR>", "Order buffers by name", opts = { silent = true } },
+    [" <leader>bd "] = { "<Cmd>BufferOrderByDirectory<CR>", "Order buffers by directory", opts = { silent = true } },
+    ["<leader>bl"] = { "<Cmd>BufferOrderByLanguage<CR>", "Order buffers by language", opts = { silent = true } },
+    ["<leader>bw"] = {
+      "<Cmd>BufferOrderByWindowNumber<CR> ",
+      "Oreder buffers by window number",
+      opts = { silent = true },
+    },
   },
 }
 

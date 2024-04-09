@@ -345,6 +345,7 @@ local default_plugins = {
     lazy = false,
     config = function()
       require("plugins.configs.barbar")
+      require("core.utils").load_mappings("barbar")
     end,
   },
 }
