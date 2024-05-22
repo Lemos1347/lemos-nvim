@@ -26,7 +26,7 @@ local options = {
     "typescript-language-server",
     "docker-compose-language-service",
     "dockerfile-language-server",
-    "sqlfmt",
+    -- "sqlfmt",
     "sqls",
     "zls",
   }, -- not an option from mason.nvim
