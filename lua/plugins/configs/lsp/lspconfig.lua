@@ -277,4 +277,10 @@ lspconfig.sqls.setup({
   on_attach = M.on_attach,
 })
 
+--configure for zig files
+lspconfig.zls.setup({
+  capabilities = M.capabilities,
+  on_attach = M.on_attach,
+})
+
 return M

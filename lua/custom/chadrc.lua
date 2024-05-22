@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = "tokyonight",
+  theme = "tokyodark",
   transparency = true,
   tabufline = {
     enabled = false,

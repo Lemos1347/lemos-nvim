@@ -28,6 +28,7 @@ local options = {
     "dockerfile-language-server",
     "sqlfmt",
     "sqls",
+    "zls",
   }, -- not an option from mason.nvim
 
   PATH = "skip",

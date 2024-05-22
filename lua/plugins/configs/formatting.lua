@@ -24,6 +24,7 @@ conform.setup({
     cmake = { "cmakelang" },
     c = { "clang-format" },
     cpp = { "clang-format" },
+    zig = { "fmt.zig" },
     -- sql = { "sql-formatter" },
   },
   format_on_save = {
