@@ -69,8 +69,8 @@ local options = {
   formatting = formatting_style,
 
   mapping = {
-    ["<Up>"] = cmp.mapping.select_prev_item(),
-    ["<Down>"] = cmp.mapping.select_next_item(),
+    ["<A-Up>"] = cmp.mapping.select_prev_item(),
+    ["<A-Down>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
@@ -107,7 +107,7 @@ local options = {
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    { name = "buffer" },
+    -- { name = "buffer" }, uncomment this to get text options
     { name = "nvim_lua" },
     { name = "path" },
   },

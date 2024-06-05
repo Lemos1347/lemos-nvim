@@ -2,13 +2,13 @@
 local M = {}
 
 M.ui = {
-  theme = "tokyodark",
+  theme = "oxocarbon",
   transparency = true,
   tabufline = {
     enabled = false,
   },
   statusline = {
-    theme = "vscode_colored",
+    theme = "minimal",
   },
 }
 

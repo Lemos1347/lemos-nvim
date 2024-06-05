@@ -49,6 +49,8 @@ local options = {
       node_decremental = "<bs>",
     },
   },
+
+  utils = require("nvim-treesitter.ts_utils"),
 }
 
 return options

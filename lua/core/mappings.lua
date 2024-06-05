@@ -317,6 +317,7 @@ M.telescope = {
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
 
     ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
+    ["<leader>cd"] = { "<cmd> Telescope zoxide list <CR>", "zoxide bookmarks" },
   },
 }
 
@@ -611,7 +612,7 @@ M.barbar = {
 
     ["<A-w>"] = { "<Cmd>BufferClose<CR>", "Close buffer", opts = { silent = true } },
     ["<A-t>"] = { "<Cmd>BufferRestore<CR>", "Restore buffer", opts = { silent = true } },
-    ["<A-W>"] = {
+    ["<A-q>"] = {
       "<Cmd>BufferCloseAllButCurrentOrPinned<CR>",
       "Close all buffers except the one you are",
       opts = { silent = true },
