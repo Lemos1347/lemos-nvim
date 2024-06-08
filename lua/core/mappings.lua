@@ -24,7 +24,7 @@ M.general = {
     ["<C-k>"] = { "<C-w>k", "Window up" },
 
     -- save
-    ["<leader>s"] = { ":w<CR>", "Save file", opts = { silent = true } },
+    ["<C-s>"] = { ":w<CR>", "Save file", opts = { silent = true } },
     -- ["<leader>w"] = { ":bp|bd#<CR>", "Close current buffer" },
     -- ["<leader>W"] = { ":%bd|e#<CR>", "Close all buffers except the one you are" },
 
@@ -548,25 +548,25 @@ M.harpoon = {
     ["<leader>a"] = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Add file to harpoon" },
     ["<C-e>"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Toogle menu" },
 
-    ["<C-a>"] = {
+    ["<A-a>"] = {
       function()
         require("harpoon.ui").nav_file(1)
       end,
       "Go to file 1",
     },
-    ["<C-s>"] = {
+    ["<A-s>"] = {
       function()
         require("harpoon.ui").nav_file(2)
       end,
       "Go to file 2",
     },
-    ["<C-d>"] = {
+    ["<A-d>"] = {
       function()
         require("harpoon.ui").nav_file(3)
       end,
       "Go to file 3",
     },
-    ["<C-f>"] = {
+    ["<A-f>"] = {
       function()
         require("harpoon.ui").nav_file(4)
       end,
