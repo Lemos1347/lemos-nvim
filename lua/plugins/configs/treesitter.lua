@@ -26,6 +26,7 @@ local options = {
     "rust",
     "python",
     "zig",
+    "just",
   },
 
   highlight = {
