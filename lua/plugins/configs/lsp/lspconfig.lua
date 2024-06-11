@@ -245,6 +245,19 @@ require("rust-tools").setup(rust_tools_opts)
 lspconfig.gopls.setup({
   capabilities = M.capabilities,
   on_attach = M.on_attach,
+  settings = {
+    gopls = {
+      hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        compositeLiteralTypes = true,
+        constantValues = true,
+        functionTypeParameters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+      },
+    },
+  },
 })
 
 --configure cmake

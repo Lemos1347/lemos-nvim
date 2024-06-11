@@ -56,6 +56,12 @@ M.general = {
       end,
       "LSP formatting",
     },
+    ["<C-i>"] = {
+      function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end,
+      "LSP toogle inlay hint",
+    },
 
     --window management
     ["<leader>sv"] = { "<C-w>v", "Split window vertically" }, -- split window vertically
