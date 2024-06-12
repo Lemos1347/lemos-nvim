@@ -56,7 +56,7 @@ M.general = {
       end,
       "LSP formatting",
     },
-    ["<C-i>"] = {
+    ["<C-.>"] = {
       function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end,
