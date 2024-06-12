@@ -97,6 +97,7 @@ lspconfig.lua_ls.setup({
         maxPreload = 100000,
         preloadFileSize = 10000,
       },
+      hint = { enable = true },
     },
   },
 })
