@@ -221,6 +221,9 @@ lspconfig.rust_analyzer.setup({
       diagnostics = {
         enable = true,
       },
+      cachePriming = {
+        enable = true,
+      },
       completition = {
         dynamicRegistration = true,
       },
