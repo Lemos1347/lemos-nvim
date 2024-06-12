@@ -135,9 +135,9 @@ local default_plugins = {
     opts = {
       inlay_hints = { enabled = true },
     },
-    dependencies = {
-      "simrat39/rust-tools.nvim",
-    },
+    -- dependencies = {
+    --   "simrat39/rust-tools.nvim",
+    -- },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("plugins.configs.lsp.lspconfig")
