@@ -29,3 +29,19 @@ vim.o.linebreak = true
 -- vim.o.textwidth = 120
 
 require("plugins")
+
+local function is_wsl()
+  local uname = vim.fn.system("uname -r")
+  return uname:find("microsoft") ~= nil
+end
+
+if is_wsl() then
+  vim.api.nvim_create_augroup("Yank", { clear = true })
+  vim.api.nvim_create_augroup("TextYankPost", {
+    group = "Yank",
+    pattern = "*",
+    callback = function()
+      vim.fn.system("/mnt/c/windows/system32/clip.exe ", vim.fn.getreg('"'))
+    end,
+  })
+end
