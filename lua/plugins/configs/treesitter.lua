@@ -27,6 +27,7 @@ local options = {
     "python",
     "zig",
     "just",
+    "nix",
   },
 
   highlight = {

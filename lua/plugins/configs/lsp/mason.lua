@@ -29,6 +29,7 @@ local options = {
     -- "sqlfmt",
     "sqls",
     "zls",
+    "nil",
   }, -- not an option from mason.nvim
 
   PATH = "skip",

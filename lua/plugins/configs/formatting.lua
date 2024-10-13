@@ -25,6 +25,7 @@ conform.setup({
     c = { "clang-format" },
     cpp = { "clang-format" },
     zig = { "fmt.zig" },
+    nix = { "nixfmt" },
     -- sql = { "sql-formatter" },
   },
   format_on_save = {

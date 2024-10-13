@@ -259,6 +259,7 @@ lspconfig.gopls.setup({
   on_attach = M.on_attach,
   settings = {
     gopls = {
+      buildFlags = { "-tags=wireinject" },
       hints = {
         assignVariableTypes = true,
         compositeLiteralFields = true,
@@ -304,6 +305,12 @@ lspconfig.sqls.setup({
 
 --configure for zig files
 lspconfig.zls.setup({
+  capabilities = M.capabilities,
+  on_attach = M.on_attach,
+})
+
+--configure for nix files
+lspconfig.nil_ls.setup({
   capabilities = M.capabilities,
   on_attach = M.on_attach,
 })

@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = "oxocarbon",
+  theme = "ayu_dark",
   transparency = true,
   tabufline = {
     enabled = false,
