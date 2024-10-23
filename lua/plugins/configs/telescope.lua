@@ -49,7 +49,7 @@ local options = {
     },
   },
 
-  extensions_list = { "themes", "terms", "zoxide" },
+  extensions_list = { "themes", "terms", "zoxide", "lsp_handlers" },
 }
 
 return options

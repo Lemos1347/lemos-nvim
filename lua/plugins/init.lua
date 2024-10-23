@@ -253,6 +253,7 @@ local default_plugins = {
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "jvgrootveld/telescope-zoxide",
+      "gbrlsnchs/telescope-lsp-handlers.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-lua/popup.nvim",
     },
