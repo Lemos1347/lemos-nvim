@@ -47,7 +47,7 @@ lspconfig.html.setup({
 })
 
 -- configure typescript server with plugin
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   on_attach = M.on_attach,
   capabilities = M.capabilities,
   settings = {
