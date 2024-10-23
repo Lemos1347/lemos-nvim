@@ -328,6 +328,32 @@ M.telescope = {
 
     ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
     ["<leader>cd"] = { "<cmd> Telescope zoxide list <CR>", "zoxide bookmarks" },
+
+    --builtins
+    ["<leader>wh"] = {
+      function()
+        require("telescope.builtin").keymaps()
+      end,
+      "List keymaps",
+    },
+    ["<leader>fs"] = {
+      function()
+        require("telescope.builtin").lsp_document_symbols()
+      end,
+      "List all lsp simbols",
+    },
+    ["ld"] = {
+      function()
+        require("telescope.builtin").diagnostics({ bufnr = 0 })
+      end,
+      "List lsp diagnostics for the current folder",
+    },
+    ["la"] = {
+      function()
+        require("telescope.builtin").diagnostics({ bufnr = 0 })
+      end,
+      "List lsp diagnostics for the current workspace",
+    },
   },
 }
 

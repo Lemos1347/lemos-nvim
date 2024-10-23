@@ -1,5 +1,6 @@
 require("barbar").setup({
   auto_hide = true,
+  exclude_ft = { "checkhealth" },
 })
 
 vim.cmd([[

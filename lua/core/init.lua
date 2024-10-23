@@ -130,12 +130,21 @@ vim.api.nvim_create_autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "LspAttach" }, {
-  callback = function(args)
-    local result = vim.lsp.buf_attach_client(args.buf, args.data.client_id)
-    if result == true then
-      vim.lsp.inlay_hint.enable(true)
-    end
+-- Always set inlay_hint when LspAttached
+-- autocmd({ "LspAttach" }, {
+--   callback = function(args)
+--     local result = vim.lsp.buf_attach_client(args.buf, args.data.client_id)
+--     if result == true then
+--       vim.lsp.inlay_hint.enable(true)
+--     end
+--   end,
+-- })
+
+-- closes health:// buffers after "q" (workaround for the :LspInfo update)
+autocmd("FileType", {
+  pattern = "checkhealth",
+  callback = function()
+    vim.bo.bufhidden = "wipe"
   end,
 })
 
