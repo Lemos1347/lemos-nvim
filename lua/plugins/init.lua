@@ -409,6 +409,19 @@ local default_plugins = {
           inc_rename = false, -- enables an input dialog for inc-rename.nvim
           lsp_doc_border = false, -- add a border to hover docs and signature help
         },
+
+        -- Avoid showing notification when more then one lsp is attached
+        routes = {
+          {
+            filter = {
+              event = "notify",
+              find = "No information available",
+            },
+            opts = {
+              skip = true,
+            },
+          },
+        },
       })
     end,
   },
