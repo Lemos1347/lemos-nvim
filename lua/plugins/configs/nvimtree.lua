@@ -12,6 +12,10 @@ local options = {
     enable = true,
     update_root = false,
   },
+  notify = {
+    threshold = vim.log.levels.ERROR,
+    absolute_path = true,
+  },
   view = {
     adaptive_size = false,
     side = "right",
