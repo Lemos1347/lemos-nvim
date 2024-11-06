@@ -342,13 +342,13 @@ M.telescope = {
       end,
       "List all lsp simbols",
     },
-    ["ld"] = {
+    ["<leader>ld"] = {
       function()
         require("telescope.builtin").diagnostics({ bufnr = 0 })
       end,
       "List lsp diagnostics for the current folder",
     },
-    ["la"] = {
+    ["<leader>la"] = {
       function()
         require("telescope.builtin").diagnostics({ bufnr = 0 })
       end,
