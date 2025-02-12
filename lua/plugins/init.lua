@@ -465,6 +465,16 @@ local default_plugins = {
   },
   {
     "folke/trouble.nvim",
+    cmd = "Trouble",
+
+    init = function()
+      require("core.utils").load_mappings("trouble")
+    end,
+
+    config = function(_, opts)
+      require("trouble").setup(opts)
+    end,
+
     opts = {
       modes = {
         symbols = {
@@ -479,39 +489,6 @@ local default_plugins = {
             size = 0.3, -- Set width to 40% of the Neovim window
           },
         },
-      },
-    },
-    cmd = "Trouble",
-    keys = {
-      {
-        "<leader>xx",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-      {
-        "<leader>xX",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>xL",
-        "<cmd>Trouble loclist toggle<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>xQ",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
       },
     },
   },
