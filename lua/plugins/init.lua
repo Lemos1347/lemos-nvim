@@ -465,7 +465,22 @@ local default_plugins = {
   },
   {
     "folke/trouble.nvim",
-    opts = {},
+    opts = {
+      modes = {
+        symbols = {
+          win = {
+            position = "right",
+            size = 0.3, -- Set width to 30% of the Neovim window
+          },
+        },
+        lsp = {
+          win = {
+            position = "right",
+            size = 0.3, -- Set width to 40% of the Neovim window
+          },
+        },
+      },
+    },
     cmd = "Trouble",
     keys = {
       {
