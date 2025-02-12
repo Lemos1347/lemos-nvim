@@ -292,14 +292,14 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree", opts = { silent = true } },
 
     -- focus
     ["<leader>fe"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
 
-    ["<leader>er"] = { "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer" },
+    ["<leader>rt"] = { "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer" },
 
-    ["<leader>ec"] = { "<cmd>NvimTreeCollapse<CR>", "Collapse file explorer" },
+    -- ["<leader>ec"] = { "<cmd>NvimTreeCollapse<CR>", "Collapse file explorer" },
   },
 }
 
@@ -686,6 +686,36 @@ M.spectre = {
   },
   v = {
     ["<leader>sw"] = { '<esc><cmd>lua require("spectre").open_visual()<CR>', "Search current word" },
+  },
+}
+
+M.trouble = {
+  plugin = true,
+  n = {
+    ["<leader>xx"] = {
+      "<cmd>Trouble diagnostics toggle<cr>",
+      "Diagnostics (Trouble)",
+    },
+    ["<leader>xX"] = {
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      "Buffer Diagnostics (Trouble)",
+    },
+    ["<leader>cs"] = {
+      "<cmd>Trouble symbols toggle focus=false<cr>",
+      "Symbols (Trouble)",
+    },
+    ["<leader>cl"] = {
+      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+      "LSP Definitions / references / ... (Trouble)",
+    },
+    ["<leader>xL"] = {
+      "<cmd>Trouble loclist toggle<cr>",
+      "Location List (Trouble)",
+    },
+    ["<leader>xQ"] = {
+      "<cmd>Trouble qflist toggle<cr>",
+      "Quickfix List (Trouble)",
+    },
   },
 }
 

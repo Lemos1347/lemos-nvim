@@ -283,6 +283,11 @@ lspconfig.cmake.setup({
 lspconfig.clangd.setup({
   capabilities = M.capabilities,
   on_attach = M.on_attach,
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--query-driver=/nix/store/**/*",
+  },
 })
 
 --configure for docker-compose e Dockerfile
