@@ -15,7 +15,7 @@ local config_files_by_ft = {
   javascriptreact = { ".eslintrc.js", ".eslintrc.json", ".eslintrc" },
   typescriptreact = { ".eslintrc.js", ".eslintrc.json", ".eslintrc" },
   svelte = { ".eslintrc.js", ".eslintrc.json", ".eslintrc" },
-  python = { ".pylintrc", "pyproject.toml" },
+  python = { ".pylintrc" },
   -- Adicione mais tipos de arquivo e seus respectivos arquivos de configuração aqui.
 }
 

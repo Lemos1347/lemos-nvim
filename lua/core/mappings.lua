@@ -568,7 +568,7 @@ M.undotree = {
 M.linting = {
   plugin = true,
   n = {
-    ["<leader>l"] = {
+    ["<leader>tl"] = {
       function()
         require("lint").try_lint()
       end,
