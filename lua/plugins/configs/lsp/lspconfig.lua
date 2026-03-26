@@ -303,10 +303,10 @@ lspconfig.dockerls.setup({
 })
 
 --configure for sql files
-lspconfig.sqls.setup({
-  capabilities = M.capabilities,
-  on_attach = M.on_attach,
-})
+-- lspconfig.sqruff.setup({
+--   capabilities = M.capabilities,
+--   on_attach = M.on_attach,
+-- })
 
 --configure for zig files
 lspconfig.zls.setup({
@@ -319,5 +319,26 @@ lspconfig.nil_ls.setup({
   capabilities = M.capabilities,
   on_attach = M.on_attach,
 })
+
+local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+local elixir_ls = vim.fn.stdpath("data")
+  .. "/mason/packages/elixir-ls/language_server"
+  .. (is_windows and ".bat" or ".sh")
+
+-- configure elixir server
+lspconfig.elixirls.setup({
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  cmd = { elixir_ls },
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = false,
+      fetchDeps = false,
+      suggestSpecs = true,
+    },
+  },
+})
+
+-- vim.lsp.enable("elixirls")
 
 return M
