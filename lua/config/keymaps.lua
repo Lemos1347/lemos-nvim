@@ -39,6 +39,19 @@ map("n", "<leader>in", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "LSP: Toggle Inlay Hints" })
 
+-- Scroll LSP floating windows with C-d / C-u (falls back to normal half-page scroll)
+map({ "n", "i", "s" }, "<C-d>", function()
+  if not require("noice.lsp").scroll(4) then
+    return "<C-d>"
+  end
+end, { silent = true, expr = true, desc = "Scroll down (LSP float or normal)" })
+
+map({ "n", "i", "s" }, "<C-u>", function()
+  if not require("noice.lsp").scroll(-4) then
+    return "<C-u>"
+  end
+end, { silent = true, expr = true, desc = "Scroll up (LSP float or normal)" })
+
 -- Find word (grep)
 map("n", "<leader>fw", function()
   Snacks.picker.grep()
