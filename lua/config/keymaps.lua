@@ -34,6 +34,11 @@ end, { desc = "Format File/Selection" })
 -- LSP restart
 map("n", "<leader>lsrs", "<cmd>LspRestart<CR>", { desc = "LSP: Restart Server" })
 
+-- Toggle inlay hints
+map("n", "<leader>in", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "LSP: Toggle Inlay Hints" })
+
 -- Find word (grep)
 map("n", "<leader>fw", function()
   Snacks.picker.grep()
