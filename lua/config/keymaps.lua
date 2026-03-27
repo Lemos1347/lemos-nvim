@@ -60,6 +60,18 @@ end, { desc = "Pick Window" })
 map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle Comment", remap = true })
 
+-- Delete/Change without copying (black hole register)
+-- This covers all motions: dd, diw, daw, di(, da", ciw, ci(, etc.
+map({ "n", "v" }, "d", '"_d', { desc = "Delete without yanking" })
+map({ "n", "v" }, "c", '"_c', { desc = "Change without yanking" })
+
+-- Move lines in visual mode
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down", silent = true })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
+
+-- Paste without overwriting register (in visual mode)
+map("x", "p", '"_dP', { desc = "Paste without yanking replaced text" })
+
 -- Maximize/restore split (tab-based toggle for full maximize)
 map("n", "<leader>sm", function()
   if maximized then
