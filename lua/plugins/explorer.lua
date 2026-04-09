@@ -25,6 +25,14 @@ return {
       dashboard = { enabled = false },
       explorer = { replace_netrw = true },
       picker = {
+        win = {
+          input = {
+            keys = {
+              ["<C-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
+              ["<C-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
+            },
+          },
+        },
         sources = {
           explorer = {
             hidden = true,

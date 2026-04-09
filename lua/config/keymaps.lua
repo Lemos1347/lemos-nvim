@@ -10,6 +10,13 @@ vim.keymap.del("n", "<leader>l")
 -- LSP diagnostics
 map("n", "<leader>la", vim.diagnostic.setloclist, { desc = "LSP: All Problems" })
 map("n", "<leader>lf", vim.diagnostic.open_float, { desc = "LSP: Line Diagnostics" })
+map("n", "gi", vim.lsp.buf.implementation, { desc = "LSP: Goto Implementation" })
+
+-- Tmux-aware window navigation
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", { desc = "Window Left" })
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "Window Down" })
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "Window Up" })
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", { desc = "Window Right" })
 
 -- Window splits
 map("n", "<leader>sv", "<cmd>vsplit<CR>", { desc = "Split Vertical" })
@@ -33,6 +40,9 @@ end, { desc = "Format File/Selection" })
 
 -- LSP restart
 map("n", "<leader>lsrs", "<cmd>LspRestart<CR>", { desc = "LSP: Restart Server" })
+
+-- LSP rename
+map("n", "<leader>ra", vim.lsp.buf.rename, { desc = "LSP: Rename Symbol" })
 
 -- Toggle inlay hints
 map("n", "<leader>in", function()
